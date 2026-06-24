@@ -738,22 +738,21 @@ body.sealed { overflow: hidden; }
   top: 16px;
   right: 16px;
   z-index: 1001;
-  background: rgba(255,255,255,.1);
-  border: 1px solid rgba(255,255,255,.25);
+  background: var(--wine);
+  border: 1px solid rgba(255,255,255,.15);
   border-radius: 20px;
-  color: rgba(255,255,255,.8);
+  color: rgba(240,231,213,.9);
   font-family: 'Montserrat', sans-serif;
   font-size: 10px;
   font-weight: 600;
   letter-spacing: 2px;
   padding: 7px 14px;
   cursor: pointer;
-  backdrop-filter: blur(6px);
-  transition: background .2s, border-color .2s;
+  box-shadow: 0 2px 12px rgba(0,0,0,.25);
+  transition: background .2s;
 }
 #lang-toggle:hover {
-  background: rgba(255,255,255,.18);
-  border-color: rgba(255,255,255,.5);
+  background: var(--wine-dk);
 }
 
 /* ─── RSVP SUCCESS MODAL ─────────────────────────── */
