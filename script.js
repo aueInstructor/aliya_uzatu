@@ -51,7 +51,7 @@ const T = {
     sectionSchedule: 'Программа',
     sectionDresscode:'Дресс-код',
     rsvpTitle:       'Анкета',
-    rsvpDesc:        'Уважаемый гость,<br>просим подтвердить<br>ваше участие',
+    rsvpDesc:        'Уважаемый гость, просим<br>подтвердить ваше участие',
     rsvp1:           'Да, приду!',
     rsvp2:           'Приду с супругом / супругой',
     rsvp3:           'К сожалению, не смогу прийти',
@@ -126,6 +126,17 @@ function renderConfigText() {
     if ($('main').classList.contains('open')) {
       list.querySelectorAll('.reveal').forEach(el => el.classList.add('in'));
     }
+  }
+
+  if (CONFIG.contacts.rsvpDeadline) {
+    const d = new Date(CONFIG.contacts.rsvpDeadline);
+    const dateStr = lang === 'kk'
+      ? `${d.getDate()} ${T.kk.months[d.getMonth()].toLowerCase()} ${d.getFullYear()} жылға`
+      : d.toLocaleDateString('ru-RU', { day: 'numeric', month: 'long', year: 'numeric' });
+    const text = lang === 'kk'
+      ? `Қатысуыңызды ${dateStr} дейін растасаңыз алғыс болар еді.`
+      : `Будем благодарны, если вы подтвердите своё присутствие до ${dateStr}.`;
+    set('rsvp-deadline', text);
   }
 
   const swBox = $('dc-swatches');

@@ -698,6 +698,15 @@ body.sealed { overflow: hidden; }
 }
 .rsvp-submit:hover { background: var(--red-hov); }
 
+.rsvp-deadline {
+  font-size: 12px;
+  font-weight: 300;
+  color: var(--muted);
+  line-height: 1.6;
+  margin-top: 16px;
+  text-align: center;
+}
+
 /* ─── FIXED BUTTONS ───────────────────────────────── */
 .fixed-bar {
   position: fixed;
