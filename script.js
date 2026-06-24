@@ -77,7 +77,7 @@ const T = {
 /* ══════════════════════════════════════════════════
    STATE
 ══════════════════════════════════════════════════ */
-let lang = 'ru';
+let lang = 'kk';
 let musicPlaying = false;
 
 /* ══════════════════════════════════════════════════
@@ -266,14 +266,12 @@ document.addEventListener('DOMContentLoaded', () => {
   /* lock scroll until envelope opened */
   document.body.classList.add('sealed');
 
-  /* restore saved language — skip lang screen if already chosen */
-  const savedLang = localStorage.getItem('lang');
-  if (savedLang) {
-    setLang(savedLang);
-    $('lang-screen').classList.add('hidden');
-    const toggle = $('lang-toggle');
-    if (toggle) { toggle.style.display = 'block'; updateLangToggle(); }
-  }
+  /* default to Kazakh; restore saved language if user previously switched */
+  const savedLang = localStorage.getItem('lang') || 'kk';
+  setLang(savedLang);
+  $('lang-screen').classList.add('hidden');
+  const toggle = $('lang-toggle');
+  if (toggle) { toggle.style.display = 'block'; updateLangToggle(); }
 
   /* page title */
   if (CONFIG.bride.name) document.title = `Қыз Ұзату · ${CONFIG.bride.name}`;
