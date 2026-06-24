@@ -413,7 +413,7 @@ body.sealed { overflow: hidden; }
 /* ─── SCRIPT HEADING ──────────────────────────────── */
 .script-h {
   font-family: 'KZGoodVibes', cursive;
-  font-size: clamp(32px, 9vw, 44px);
+  font-size: clamp(26px, 9vw, 40px);
   color: var(--text);
   line-height: 1.2;
   margin-bottom: 5px;
