@@ -142,7 +142,7 @@ function renderConfigText() {
       ? `${d.getDate()} ${T.kk.months[d.getMonth()].toLowerCase()} ${d.getFullYear()} жылға`
       : d.toLocaleDateString('ru-RU', { day: 'numeric', month: 'long', year: 'numeric' });
     const text = lang === 'kk'
-      ? `Қатысуыңызды ${dateStr} дейін растасаңыз алғыс болар еді.`
+      ? `Қатысуыңызды ${dateStr} дейін растауыңызды сұраймыз.`
       : `Будем благодарны, если вы подтвердите своё присутствие до ${dateStr}.`;
     set('rsvp-deadline', text);
   }

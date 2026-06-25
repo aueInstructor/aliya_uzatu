@@ -416,7 +416,7 @@ body.sealed { overflow: hidden; }
   font-size: clamp(26px, 9vw, 40px);
   color: var(--text);
   line-height: 1.2;
-  margin-bottom: 5px;
+  margin-bottom: 20px;
 }
 
 /* ─── ORNAMENT ────────────────────────────────────── */
