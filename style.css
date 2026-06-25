@@ -861,14 +861,14 @@ body.sealed { overflow: hidden; }
 
 .kaz-corner-orn {
   position: absolute;
-  top: 10%;
-  right: 10px;
+  top: 0%;
+  right: 0px;
   transform: translateY(-50%);
   width: 120px;
   height: 120px;
   object-fit: contain;
   pointer-events: none;
-  opacity: .18;
+  opacity: 0.6;
   animation: spin-slow 15s linear infinite;
 }
 
