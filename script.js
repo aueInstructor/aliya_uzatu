@@ -102,6 +102,14 @@ const colorMap = {
   'салатовый':'#B8D888','шампанский':'#E8D4B0',
 };
 
+const colorNamesKk = {
+  'пудровый':'пудра','голубой':'көгілдір','бежевый':'бежевый',
+  'розовый':'қызғылт','лиловый':'күлгін','сиреневый':'сирень',
+  'мятный':'жалбыз','белый':'ақ','кремовый':'кремді',
+  'золотой':'алтын','персиковый':'шабдалы','жёлтый':'сары',
+  'салатовый':'ашық жасыл','шампанский':'шампань',
+};
+
 let configRendered = false;
 
 function renderConfigText() {
@@ -141,11 +149,15 @@ function renderConfigText() {
 
   const swBox = $('dc-swatches');
   if (swBox && CONFIG.dresscode.colors.length) {
-    swBox.innerHTML = CONFIG.dresscode.colors.map(c => `
+    swBox.innerHTML = CONFIG.dresscode.colors.map(c => {
+      const key = c.toLowerCase();
+      const name = lang === 'kk' ? (colorNamesKk[key] || c) : c;
+      return `
       <div class="dc-swatch">
-        <div class="dc-circle" style="background:${colorMap[c.toLowerCase()]||'#ddd'}"></div>
-        <span class="dc-name">${c}</span>
-      </div>`).join('');
+        <div class="dc-circle" style="background:${colorMap[key]||'#ddd'}"></div>
+        <span class="dc-name">${name}</span>
+      </div>`;
+    }).join('');
   }
 }
 
