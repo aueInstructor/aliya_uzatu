@@ -3,8 +3,8 @@
 ══════════════════════════════════════════════════ */
 const T = {
   kk: {
-    sealScript:      'Сіз шақыру алдыңыз.',
-    sealSubtitle:    'ҚЫЗ ҰЗАТУ ШАҚЫРУЫ',
+    sealScript:      'Шақыру',
+    sealSubtitle:    'ҚЫЗ ҰЗАТУ ӘЛИЯ-ТҰМАР',
     sealOpen:        'АШУ',
     sealHint:        'Шақыруды ашу үшін «АШУ» батырмасын басыңыз.',
     sectionDate:     'Той салтанаты:',
@@ -38,8 +38,8 @@ const T = {
     waWish: 'Тілек',
   },
   ru: {
-    sealScript:      'Вы получили приглашение.',
-    sealSubtitle:    'ПРИГЛАШЕНИЕ — ҚЫЗ ҰЗАТУ',
+    sealScript:      'Приглашение',
+    sealSubtitle:    'ҚЫЗ ҰЗАТУ ӘЛИЯ-ТҰМАР',
     sealOpen:        'ОТКРЫТЬ',
     sealHint:        'Нажмите «ОТКРЫТЬ» чтобы увидеть приглашение.',
     sectionDate:     'Дата торжества:',
@@ -193,7 +193,6 @@ function setLang(l) {
 ══════════════════════════════════════════════════ */
 function chooseLang(l) {
   setLang(l);
-  localStorage.setItem('lang', l);
   $('lang-screen').classList.add('hidden');
   const toggle = $('lang-toggle');
   if (toggle) { toggle.style.display = 'block'; updateLangToggle(); }
@@ -277,9 +276,7 @@ document.addEventListener('DOMContentLoaded', () => {
   /* lock scroll until envelope opened */
   document.body.classList.add('sealed');
 
-  /* default to Kazakh; restore saved language if user previously switched */
-  const savedLang = localStorage.getItem('lang') || 'kk';
-  setLang(savedLang);
+  setLang('kk');
   $('lang-screen').classList.add('hidden');
   const toggle = $('lang-toggle');
   if (toggle) { toggle.style.display = 'block'; updateLangToggle(); }
